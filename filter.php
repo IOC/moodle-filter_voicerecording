@@ -50,7 +50,7 @@ class filter_voicerecording extends moodle_text_filter {
 
         $newtext = '';
 
-        $match = '/<a\s[^>]*href="(http(s)?:\/\/.*?\.spx)"[^>]*>([^>]*)<\/a>/is';
+        $match = '/<a\s[^>]*href="(http(s)?:\/\/[^"]*\.spx)"[^>]*>([^>]*)<\/a>/is';
         if (preg_match($match, $text)) {
             $applet = nanogong_applet("$1");
             $html = preg_replace($match, $applet, $text);
